@@ -3,7 +3,6 @@
 var mongoose = require('mongoose');
 var Firebase = require('firebase');
 var jwt = require('jwt-simple');
-var moment = require('moment');
 
 var JWT_SECRET = process.env.JWT_SECRET;
 
