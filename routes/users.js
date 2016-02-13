@@ -102,10 +102,14 @@ router.put('/profile', authMiddleware, function(req, res, next) {
     user.firstname = req.body.firstname;
     user.lastname = req.body.lastname;
     user.phone = req.body.phone;
-    user.aboutme.gender = req.body.aboutme.gender;
-    user.aboutme.orientation = req.body.aboutme.orientation;
-    user.lookingfor.gender = req.body.lookingfor.gender;
-    user.lookingfor.orientation = req.body.lookingfor.orientation;
+    if (req.body.aboutme) {
+      user.aboutme.gender = req.body.aboutme.gender;
+      user.aboutme.orientation = req.body.aboutme.orientation;
+    };
+    if (req.body.lookingfor) {
+      user.lookingfor.gender = req.body.lookingfor.gender;
+      user.lookingfor.orientation = req.body.lookingfor.orientation;
+    };
     user.save(function(err, savedUser){
       res.status(err ? 400 : 200).send(err || savedUser);
     });
