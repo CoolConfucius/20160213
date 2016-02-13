@@ -2,9 +2,6 @@
 <table class="table" ng-if="otters.length">
   <thead>
     <tr>
-      <!-- <th>#</th> -->
-      <!-- <th ng-repeat="(key, value) in otters[0]" ng-if="key !== 'Status'">{{key}}
-      </th> -->
       <th>Name</th>
       <th>Gender and Orientation</th>
       <th>View</th>
@@ -14,8 +11,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="otter in otters" ng-class='{lightsteelblue: $even}'>
-      <!-- <td>{{$index + 1}}</td>
-      <td ng-repeat="(key, value) in otter" ng-if="key !== 'Status'">{{value}}</td> -->
+      
       <td>{{otter.firstname}}</td>
       <td>{{otter.aboutme.orientation + ' ' + otter.aboutme.gender}}</td>
       <td><button ng-click="viewOtter(otter._id)" class="btn btn-primary btn-sm">
