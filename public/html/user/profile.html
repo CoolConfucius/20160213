@@ -1,0 +1,56 @@
+<h2>Debug  {{user}}</h2>
+
+<h3 class="col-xs-8 col-xs-offset-2">Profile</h3>
+<form class="col-xs-8 col-xs-offset-2">
+  <h3>Basic Info</h3>
+  <div class="form-group">
+    <label>First Name</label>
+    <br>
+    <span>{{user.firstname}}</span>
+    <input ng-model="profileObj.firstname" id="firstName" type="text" placeholder="First Name" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <br>
+    <span>{{user.lastname}}</span>
+    <input ng-model="profileObj.lastname" id="lastName" type="text" placeholder="Last Name" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label>Phone #</label>
+    <br>
+    <span>{{user.phone}}</span>
+    <input ng-model="profileObj.phone" id="phone" type="text" placeholder="Phone #" class="form-control"/>
+  </div>
+  <hr>
+  <h3>About Me</h3>
+  <div class="form-group">
+    <label>Gender Identity e.g.(trans female, cis female, trans male, cis male, genderfluid, androgenous)</label>
+    <br>
+    <span ng-if="user.aboutme">{{user.aboutme.gender}}</span>
+    <input ng-model="profileObj.aboutme.gender" type="text" placeholder="Gender Identity" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label>Sexual Orientation</label>
+    <br>
+    <span ng-if="user.aboutme">{{user.aboutme.orientation}}</span>
+    <input ng-model="profileObj.aboutme.orientation" type="text" placeholder="Sexual Orientation" class="form-control"/>
+  </div>
+
+  <hr>
+  <h3>Looking for</h3>
+  <div class="form-group">
+    <label>Gender Identity e.g.(trans female, cis female, trans male, cis male, genderfluid, androgenous)</label>
+    <br>
+    <span ng-if="user.lookingfor">{{user.lookingfor.gender}}</span>
+    <input ng-model="profileObj.lookingfor.gender" type="text" placeholder="Gender Identity" class="form-control"/>
+  </div>
+  <div class="form-group">
+    <label>Sexual Orientation</label>
+    <br>
+    <span ng-if="user.lookingfor">{{user.lookingfor.orientation}}</span>
+    <input ng-model="profileObj.lookingfor.orientation" type="text" placeholder="Sexual Orientation" class="form-control"/>
+  </div>
+
+  <hr>
+  <button ng-click="editProfile()" type="submit" class="btn btn-primary">Submit</button>
+</form>

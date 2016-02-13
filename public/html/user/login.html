@@ -1,0 +1,12 @@
+<h3 class="col-xs-8 col-xs-offset-2">Login</h3>
+<form id="formLogin" class="col-xs-8 col-xs-offset-2">
+  <div class="form-group"><span class="requiredField">* </span>
+    <label>Email address</label>
+    <input ng-model="userObj.email" id="email" type="email" placeholder="E-Mail" required="required" class="form-control"/>
+  </div>
+  <div class="form-group"><span class="requiredField">* </span>
+    <label>Password</label>
+    <input ng-model="userObj.password" id="password" type="password" placeholder="Password" required="required" class="form-control"/>
+  </div>
+  <button ng-click="login()" type="submit" class="btn btn-default">Submit</button><a href="/users/forgot">Forgot Password?</a>
+</form>
